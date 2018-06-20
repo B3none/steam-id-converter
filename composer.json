@@ -1,0 +1,17 @@
+{
+    "name": "b3none/steam-id-converter",
+    "description": "Steam ID Converter",
+    "type": "library",
+    "authors": [
+        {
+            "name": "b3none",
+            "email": "ablackham2000@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "B3none\\SteamIDConverter\\": "src/"
+        }
+    },
+    "require": {}
+}
