@@ -7,7 +7,7 @@ class SteamUser
     /**
      * @var bool
      */
-    protected $hasConverted = false;
+    protected $isComplete = false;
 
     /**
      * @var string
@@ -56,9 +56,14 @@ class SteamUser
     /**
      * @return string
      */
-    public function getSteamID() : string
+    public function getSteamID() : ?string
     {
         return $this->steamID;
+    }
+
+    public function hasSteamID() : bool
+    {
+        return !empty($this->getSteamID());
     }
 
     /**
@@ -67,14 +72,20 @@ class SteamUser
     public function setSteamID(string $steamID) : void
     {
         $this->steamID = $steamID;
+        $this->detectIsComplete();
     }
 
     /**
      * @return string
      */
-    public function getSteamID3() : string
+    public function getSteamID3() : ?string
     {
         return $this->steamID3;
+    }
+
+    public function hasSteamID3() : bool
+    {
+        return !empty($this->getSteamID3());
     }
 
     /**
@@ -83,14 +94,20 @@ class SteamUser
     public function setSteamID3(string $steamID3) : void
     {
         $this->steamID3 = $steamID3;
+        $this->detectIsComplete();
     }
 
     /**
      * @return string
      */
-    public function getSteamID64() : string
+    public function getSteamID64() : ?string
     {
         return $this->steamID64;
+    }
+
+    public function hasSteamID64() : bool
+    {
+        return !empty($this->getSteamID64());
     }
 
     /**
@@ -99,14 +116,20 @@ class SteamUser
     public function setSteamID64(string $steamID64) : void
     {
         $this->steamID64 = $steamID64;
+        $this->detectIsComplete();
     }
 
     /**
      * @return string
      */
-    public function getVanity() : string
+    public function getVanity() : ?string
     {
         return $this->vanity;
+    }
+
+    public function hasVanity() : bool
+    {
+        return !empty($this->getVanity());
     }
 
     /**
@@ -115,9 +138,27 @@ class SteamUser
     public function setVanity(string $vanity) : void
     {
         $this->vanity = $vanity;
+        $this->detectIsComplete();
     }
 
-    protected function convert()
+    /**
+     * @return bool
+     */
+    public function isComplete() : bool
     {
+        return $this->isComplete;
+    }
+
+    public function detectIsComplete() : void
+    {
+        $this->isComplete = (
+//            $this->hasVanity()
+//            && $this->hasSteamID64()
+            $this->hasSteamID64()
+            && $this->hasSteamID3()
+//            && $this->hasSteamID()
+        );
+
+        echo PHP_EOL . "isComplete [TRUE]";
     }
 }
