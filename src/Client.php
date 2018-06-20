@@ -22,20 +22,6 @@ class Client
 
     /**
      * Create a SteamUser from one of these:
-     * [U:1:68245118]
-     *
-     * @param string $steamId
-     * @return SteamUser
-     */
-    public function createFromSteamID3(string $steamId) : SteamUser
-    {
-        return new SteamUser([
-            'steamID3' => $steamId
-        ]);
-    }
-
-    /**
-     * Create a SteamUser from one of these:
      * 76561198028510846
      *
      * i.e. https://steamcommunity.com/profiles/76561198028510846
@@ -47,22 +33,6 @@ class Client
     {
         return new SteamUser([
             'steamID64' => $steamId
-        ]);
-    }
-
-    /**
-     * Create a SteamUser from one of these:
-     * b3none
-     *
-     * i.e. https://steamcommunity.com/id/b3none
-     *
-     * @param string $vanityId
-     * @return SteamUser
-     */
-    public function createFromVanity(string $vanityId) : SteamUser
-    {
-        return new SteamUser([
-            'vanity' => $vanityId
         ]);
     }
 }
