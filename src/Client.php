@@ -21,6 +21,10 @@ class Client
      */
     public function createFromSteamID(string $steamId) : SteamUser
     {
+        /**
+         * TODO: Add some validation to make sure we're only given a SteamID and nothing else.
+         */
+
         $conversionProcessor = new ConversionProcessor([
             'steamID' => $steamId
         ]);
@@ -38,6 +42,10 @@ class Client
      */
     public function createFromSteamID64(string $steamId) : SteamUser
     {
+        /**
+         * TODO: Add some validation to make sure we're only given a SteamID64 and nothing else.
+         */
+
         $conversionProcessor = new ConversionProcessor([
             'steamID64' => $steamId
         ]);
