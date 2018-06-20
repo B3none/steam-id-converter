@@ -25,11 +25,11 @@ class ConversionProcessor
 
     /**
      * I've made this function recursive so that when I implement different
-     * SteamID types then they can be easily implemented.
+     * SteamID types it requires less effort in the future.
      *
      * @return SteamUser
      */
-    protected function convert() : SteamUser
+    public function convert() : SteamUser
     {
         if ($this->steamUser->hasSteamID64()) {
             if (!$this->steamUser->hasSteamID()) {
@@ -68,8 +68,9 @@ class ConversionProcessor
         }
 
         $accountNumber	= bcdiv($temp, '2') ?? 0;
-        $steamID3 = "STEAM_0:" . $idNumber . ":" . number_format($accountNumber, 0, '', '');
-        $this->steamUser->setSteamID((string)$steamID3);
+        $accountNumber = number_format($accountNumber, 0, '', '');
+        $steamID = "STEAM_0:{$idNumber}:{$accountNumber}";
+        $this->steamUser->setSteamID($steamID);
     }
 
     /**
