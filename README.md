@@ -1,8 +1,11 @@
 # SteamIDConverter
 A steam ID converter
 
-#Composer
+# Composer
 `composer require b3none/steam-id-converter`
 
-#Example
+# Example
 Please see the `example.php` for how to use this library effectively.
+
+# License
+[MIT](https://github.com/b3none/SteamIDConverter/blob/master/LICENSE "MIT")
