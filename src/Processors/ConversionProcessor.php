@@ -75,14 +75,14 @@ class ConversionProcessor
 
     /**
      * This function was refactored from:
-     * https://github.com/callumthomson/steamid-converter
+     * https://gist.github.com/rannmann/49c1321b3239e00f442c
      */
     protected function steamIDtoSteamID64() : void
     {
         $id = $this->steamUser->getSteamID();
 
-        $account = explode(":", $id);
-        $steamID64 = bcadd(bcmul($account[1], 2), bcadd($account[0], self::STEAM_ID_64_BASE));
+        $parts = explode(':', $id);
+        $steamID64 = bcadd(bcadd(bcmul($parts[2], '2'), '76561197960265728'), $parts[1]);
 
         $this->steamUser->setSteamID64($steamID64);
     }
