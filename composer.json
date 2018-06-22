@@ -12,8 +12,5 @@
         "psr-4": {
             "B3none\\SteamIDConverter\\": "src/"
         }
-    },
-    "require": {
-        "guzzlehttp/guzzle": "^6.3"
     }
 }
