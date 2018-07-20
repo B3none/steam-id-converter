@@ -1,4 +1,5 @@
-# SteamIDConverter
+![SteamIDConverter](https://raw.githubusercontent.com/b3none/SteamIDConverter/master/logo.png)
+
 A steam ID converter
 
 # Composer
