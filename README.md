@@ -1,4 +1,4 @@
-![SteamIDConverter](https://raw.githubusercontent.com/b3none/SteamIDConverter/master/logo.png)
+#SteamIDConverter
 
 A steam ID converter
 
