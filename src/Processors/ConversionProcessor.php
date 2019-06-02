@@ -61,13 +61,13 @@ class ConversionProcessor
         $idNumber = '0';
 
         if (bcmod($id, '2') == 0) {
-            $temp =	bcsub($id, self::STEAM_ID_64_BASE);
+            $temp = bcsub($id, self::STEAM_ID_64_BASE);
         } else {
             $idNumber = '1';
-            $temp =	bcsub($id, bcadd(self::STEAM_ID_64_BASE, '1'));
+            $temp = bcsub($id, bcadd(self::STEAM_ID_64_BASE, '1'));
         }
 
-        $accountNumber	= bcdiv($temp, '2') ?? 0;
+        $accountNumber = bcdiv($temp, '2') ?? 0;
         $accountNumber = number_format($accountNumber, 0, '', '');
         $steamID = "STEAM_0:{$idNumber}:{$accountNumber}";
         $this->steamUser->setSteamID($steamID);
