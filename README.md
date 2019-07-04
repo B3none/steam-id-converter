@@ -2,6 +2,9 @@
 
 A steam ID converter
 
+# Author
+[B3none](https://b3none.co.uk/) - Developer / Maintainer
+
 # Composer
 `composer require b3none/steam-id-converter`
 
