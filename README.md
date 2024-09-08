@@ -3,7 +3,7 @@
 A steam ID converter
 
 # Author
-[B3none](https://b3none.co.uk/) - Developer / Maintainer
+[B3none](https://github.com/b3none) - Developer / Maintainer
 
 # Composer
 `composer require b3none/steam-id-converter`
